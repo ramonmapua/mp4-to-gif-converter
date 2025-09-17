@@ -90,4 +90,4 @@ Conversion complete: output/cat.gif (3.21 MB)
   Install FFmpeg from [ffmpeg.org](https://ffmpeg.org/download.html) and make sure `ffmpeg -version` works in your terminal.
 
 * GIF too large
-  → Lower the FPS or resize the video before converting.
+  * Lower the FPS or resize the video before converting.
