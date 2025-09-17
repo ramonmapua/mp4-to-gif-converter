@@ -58,6 +58,7 @@ mp4-to-gif-converter/
    ```
    Enter the MP4 file name (with extension): example.mp4
    Enter the desired FPS: 20
+   Enter lossy compression level (0 = none, higher = more compression): 20
    ```
 
 5. Your converted GIF will be saved in the `output/` folder:
@@ -65,21 +66,3 @@ mp4-to-gif-converter/
    ```
    Conversion complete: output/example.gif (2.34 MB)
    ```
-
----
-
-## Example
-
-If you have `cat.mp4` in the `input/` folder and want a 15 FPS GIF with 20% lossy compression:
-
-```
-Enter the MP4 file name (with extension): cat.mp4
-Enter the desired FPS: 15
-Enter lossy compression level (0 = none, higher = more compression): 20
-```
-
-Output:
-
-```
-Conversion complete: output/cat.gif (3.21 MB)
-```
