@@ -1,7 +1,7 @@
 # MP4 to GIF Converter (Python + FFmpeg)
 
-This is a simple Python script that converts `.mp4` video files into `.gif` images using [FFmpeg](https://ffmpeg.org/).
-You can specify the file name and the frames per second (FPS) for the output GIF. The script also shows the final GIF size in MB.
+This is a simple Python script that converts `.mp4` video files into `.gif` images using [FFmpeg](https://ffmpeg.org/) and [Gifsicle](https://github.com/kohler/gifsicle).
+You can specify the file name, the frames per second (FPS), and the lossy compression for the output GIF. The script also shows the final GIF size in MB.
 
 ## Features
 
@@ -10,6 +10,7 @@ You can specify the file name and the frames per second (FPS) for the output GIF
 
   * File name (must exist in the `input/` folder)
   * FPS (controls smoothness vs file size)
+  * Lossy compression
 * Displays the GIF’s size in megabytes
 * Logs errors and activity to `mp4-to-gif-converter.log`
 
@@ -28,6 +29,7 @@ mp4-to-gif-converter/
 
 * [Python 3.8+](https://www.python.org/)
 * [FFmpeg](https://ffmpeg.org/download.html) installed and added to your PATH
+* [Gifsicle](https://github.com/kohler/gifsicle) installed and added to your PATH
 * Python dependencies:
 
   ```bash
@@ -48,7 +50,7 @@ mp4-to-gif-converter/
 3. Run the script:
 
    ```bash
-   python mp4_to_gif.py
+   python main.py
    ```
 
 4. Enter the required information:
@@ -68,11 +70,12 @@ mp4-to-gif-converter/
 
 ## Example
 
-If you have `cat.mp4` in the `input/` folder and want a 15 FPS GIF:
+If you have `cat.mp4` in the `input/` folder and want a 15 FPS GIF with 20% lossy compression:
 
 ```
 Enter the MP4 file name (with extension): cat.mp4
 Enter the desired FPS: 15
+Enter lossy compression level (0 = none, higher = more compression): 20
 ```
 
 Output:
@@ -80,14 +83,3 @@ Output:
 ```
 Conversion complete: output/cat.gif (3.21 MB)
 ```
-
----
-
-## Troubleshooting
-
-* Error: `[WinError 2] The system cannot find the file specified`
-  * FFmpeg is not installed or not added to your PATH.
-  Install FFmpeg from [ffmpeg.org](https://ffmpeg.org/download.html) and make sure `ffmpeg -version` works in your terminal.
-
-* GIF too large
-  * Lower the FPS or resize the video before converting.
